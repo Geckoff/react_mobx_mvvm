@@ -1,0 +1,5 @@
+*.config.js
+package-lock.json
+package.json
+tsconfig.json
+tsconfig.paths.json

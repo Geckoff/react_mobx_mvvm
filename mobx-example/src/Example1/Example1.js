@@ -12,12 +12,18 @@ class Store {
 
 	// COMPUTED VALUE
 	@computed get doubledValue() {
+		//this.value++; - DO NOT DO THAT
 		return this.value * 2;
+	}
+
+	set doubledValue(value) {
+		this.value = value / 2;
 	}
 
 	// ACTION
 	@action changeValue = () => {
-		this.value++;
+		//this.value++;
+		this.doubledValue = this.doubledValue + 2;
 	};
 }
 
@@ -25,13 +31,15 @@ class Store {
 COMPONENT USING STORE (REACTION)
 ===============*/
 
-const ValueControl = inject("store")(
+const store1 = new Store();
+
+const ValueControl = (
 	observer(props => {
 		return (
 			<div>
-				<button onClick={props.store.changeValue}>Change Value</button>
-				<div>Value: {props.store.value}</div>
-				<div>Doubled Value: {props.store.doubledValue}</div>
+				<button onClick={store1.changeValue}>Change Value</button>
+				<div>Value: {store1.value}</div>
+				<div>Doubled Value: {store1.doubledValue}</div>
 			</div>
 		);
 	})

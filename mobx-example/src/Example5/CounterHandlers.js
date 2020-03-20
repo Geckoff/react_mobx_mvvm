@@ -4,57 +4,33 @@ import { observable, action } from "mobx";
 import { useInstance } from "../hooks/useInstance";
 
 class CounterHandlersViewModel {
-	@observable valueOneStates = [];
-	@observable valueTwoStates = [];
-	@observable sumStates = [];
-	@observable multiplicationStates = [];
-	@observable polarityStates = [];
+	@observable valueOneSteps = [];
+	@observable valueTwoSteps = [];
+	@observable sumSteps = [];
 
 	constructor(store) {
 		this.store = store;
 	}
 
-	@action setValueOneStates = () => {
-		this.valueOneStates.push(this.store.value1);
-	};
-
-	@action setValueTwoStates = () => {
-		this.valueTwoStates.push(this.store.value2);
-	};
-
-	@action changeBothValsHandler = () => {
-		this.sumStates.push(this.store.value1 + this.store.value2);
-		this.multiplicationStates.push(this.store.value1 * this.store.value2);
-		this.polarityStates.push(
-			this.store.value1 + this.store.value2 === 0
-				? "0"
-				: this.store.value1 + this.store.value2 > 0
-				? "+"
-				: "-"
-		);
-	};
-
-	changeValOneHandler = () => {
+	@action changeValOneHandler = () => {
 		this.store.changeValue1();
-		this.setValueOneStates();
-		this.changeBothValsHandler();
+		this.valueOneSteps.push(this.store.value1);
+		this.sumSteps.push(this.store.value1 + this.store.value2);
 	};
 
-	changeValTwoHandler = () => {
+	@action changeValTwoHandler = () => {
 		this.store.changeValue2();
-		this.setValueTwoStates();
-		this.changeBothValsHandler();
+		this.valueTwoSteps.push(this.store.value2);
+		this.sumSteps.push(this.store.value1 + this.store.value2);
 	};
 }
 
 export const CounterHandlers = inject("store")(
 	observer(props => {
 		const {
-			valueOneStates,
-			valueTwoStates,
-			sumStates,
-			multiplicationStates,
-			polarityStates,
+			valueOneSteps,
+			valueTwoSteps,
+			sumSteps,
 			changeValOneHandler,
 			changeValTwoHandler
 		} = useInstance(new CounterHandlersViewModel(props.store));
@@ -69,11 +45,9 @@ export const CounterHandlers = inject("store")(
 					<button onClick={changeValTwoHandler}>Change Value 2</button>
 				</div>
 				<div className="mt-4">
-					<div>Value 1 states: {valueOneStates.join(", ")}</div>
-					<div>Value 2 states: {valueTwoStates.join(", ")}</div>
-					<div>Sum states: {sumStates.join(", ")}</div>
-					<div>Multiplication states: {multiplicationStates.join(", ")}</div>
-					<div>Positive/Negative states: {polarityStates.join(", ")}</div>
+					<div>Value 1 Steps: {valueOneSteps.join(", ")}</div>
+					<div>Value 2 Steps: {valueTwoSteps.join(", ")}</div>
+					<div>Sum Steps: {sumSteps.join(", ")}</div>
 				</div>
 			</div>
 		);

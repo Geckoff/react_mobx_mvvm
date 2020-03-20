@@ -14,6 +14,7 @@ import { Example6 } from "./Example6/Example6";
 import { Example7 } from "./Example7/Example7";
 import { Example8 } from "./Example8/Example8";
 import { Example9 } from "./Example9/Example9";
+import { Example10 } from "./Example10/Example10";
 
 function App() {
 	return (
@@ -49,6 +50,9 @@ function App() {
 							<ListGroupItem>
 								<Link to="/example9">Example 9</Link>
 							</ListGroupItem>
+							<ListGroupItem>
+								<Link to="/example10">Example 10</Link>
+							</ListGroupItem>
 						</ListGroup>
 					</Col>
 					<Col sm={10}>
@@ -79,6 +83,9 @@ function App() {
 							</Route>
 							<Route path="/example9">
 								<Example9 />
+							</Route>
+							<Route path="/example10">
+								<Example10 />
 							</Route>
 						</Switch>
 					</Col>

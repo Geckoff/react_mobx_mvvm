@@ -3,38 +3,20 @@ import { inject, observer } from "mobx-react";
 
 export const CounterHandlers = inject("store")(
 	observer(props => {
-		const [valueOneStates, setValueOneStates] = useState([]);
-		const [valueTwoStates, setValueTwoStates] = useState([]);
-		const [sumStates, setSumStates] = useState([]);
-		const [multiplicationStates, setMultiplicationStates] = useState([]);
-		const [polarityStates, setPolarityStates] = useState([]);
-
-		const changeBothValsHandler = () => {
-			setSumStates([...sumStates, props.store.value1 + props.store.value2]);
-			setMultiplicationStates([
-				...multiplicationStates,
-				props.store.value1 * props.store.value2
-			]);
-			setPolarityStates([
-				...polarityStates,
-				props.store.value1 + props.store.value2 === 0
-					? "0"
-					: props.store.value1 + props.store.value2 > 0
-					? "+"
-					: "-"
-			]);
-		};
+		const [valueOneSteps, setValueOneSteps] = useState([]);
+		const [valueTwoSteps, setValueTwoSteps] = useState([]);
+		const [sumSteps, setSumSteps] = useState([]);
 
 		const changeValOneHandler = () => {
 			props.store.changeValue1();
-			setValueOneStates([...valueOneStates, props.store.value1]);
-			changeBothValsHandler();
+			setValueOneSteps([...valueOneSteps, props.store.value1]);
+			setSumSteps([...sumSteps, props.store.value1 + props.store.value2]);
 		};
 
 		const changeValTwoHandler = () => {
 			props.store.changeValue2();
-			setValueTwoStates([...valueTwoStates, props.store.value2]);
-			changeBothValsHandler();
+			setValueTwoSteps([...valueTwoSteps, props.store.value2]);
+			setSumSteps([...sumSteps, props.store.value1 + props.store.value2]);
 		};
 
 		return (
@@ -47,11 +29,9 @@ export const CounterHandlers = inject("store")(
 					<button onClick={changeValTwoHandler}>Change Value 2</button>
 				</div>
 				<div className="mt-4">
-					<div>Value 1 states: {valueOneStates.join(", ")}</div>
-					<div>Value 2 states: {valueTwoStates.join(", ")}</div>
-					<div>Sum states: {sumStates.join(", ")}</div>
-					<div>Multiplication states: {multiplicationStates.join(", ")}</div>
-					<div>Positive/Negative states: {polarityStates.join(", ")}</div>
+					<div>Value 1 Steps: {valueOneSteps.join(", ")}</div>
+					<div>Value 2 Steps: {valueTwoSteps.join(", ")}</div>
+					<div>Sum Steps: {sumSteps.join(", ")}</div>
 				</div>
 			</div>
 		);
