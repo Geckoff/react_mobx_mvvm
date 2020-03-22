@@ -15,84 +15,153 @@ import { Example7 } from "./Example7/Example7";
 import { Example8 } from "./Example8/Example8";
 import { Example9 } from "./Example9/Example9";
 import { Example10 } from "./Example10/Example10";
+import { Example11 } from "./Example11/Example11";
 
 function App() {
-	return (
-		<Router>
-			<div className="App p-4">
-				<Row>
-					<Col sm={2}>
-						<ListGroup>
-							<ListGroupItem>
-								<Link to="/example1">Example 1</Link>
-							</ListGroupItem>
-							<ListGroupItem>
-								<Link to="/example2">Example 2</Link>
-							</ListGroupItem>
-							<ListGroupItem>
-								<Link to="/example3">Example 3</Link>
-							</ListGroupItem>
-							<ListGroupItem>
-								<Link to="/example4">Example 4</Link>
-							</ListGroupItem>
-							<ListGroupItem>
-								<Link to="/example5">Example 5</Link>
-							</ListGroupItem>
-							<ListGroupItem>
-								<Link to="/example6">Example 6</Link>
-							</ListGroupItem>
-							<ListGroupItem>
-								<Link to="/example7">Example 7</Link>
-							</ListGroupItem>
-							<ListGroupItem>
-								<Link to="/example8">Example 8</Link>
-							</ListGroupItem>
-							<ListGroupItem>
-								<Link to="/example9">Example 9</Link>
-							</ListGroupItem>
-							<ListGroupItem>
-								<Link to="/example10">Example 10</Link>
-							</ListGroupItem>
-						</ListGroup>
-					</Col>
-					<Col sm={10}>
-						<Switch>
-							<Route path="/example1">
-								<Example1 />
-							</Route>
-							<Route path="/example2">
-								<Example2 />
-							</Route>
-							<Route path="/example3">
-								<Example3 />
-							</Route>
-							<Route path="/example4">
-								<Example4 />
-							</Route>
-							<Route path="/example5">
-								<Example5 />
-							</Route>
-							<Route path="/example6">
-								<Example6 />
-							</Route>
-							<Route path="/example7">
-								<Example7 />
-							</Route>
-							<Route path="/example8">
-								<Example8 />
-							</Route>
-							<Route path="/example9">
-								<Example9 />
-							</Route>
-							<Route path="/example10">
-								<Example10 />
-							</Route>
-						</Switch>
-					</Col>
-				</Row>
-			</div>
-		</Router>
-	);
+    return (
+        <Router>
+            <div className="App p-4">
+                <Row>
+                    <Col sm={3}>
+                        <ListGroup className="text-left">
+                            <ListGroupItem>
+                                <Link to="/example1">1. Basic App Structure</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example2">2. Files Structure</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example3">3. Computed Value in the Store</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example4">4. Mobx Store + React State</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example5">5. Mobx Store + ViewModel</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example6">6. Array Elements Observability</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example7">7. Object Properties Observability</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example8">8. Array Object Elements Observability</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example9">
+                                    9. Nested Object Properties Observability
+                                </Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example10">10. Observability Loss</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example11">11. MVVM Input</Link>
+                            </ListGroupItem>
+                        </ListGroup>
+                    </Col>
+                    <Col sm={9}>
+                        <Switch>
+                            <Route path="/example1">
+                                <Example1
+                                    name={
+                                        <h2 className="text-left text-muted">
+                                            1. Basic App Structure
+                                        </h2>
+                                    }
+                                />
+                            </Route>
+                            <Route path="/example2">
+                                <Example2
+                                    name={
+                                        <h2 className="text-left text-muted">2. Files Structure</h2>
+                                    }
+                                />
+                            </Route>
+                            <Route path="/example3">
+                                <Example3
+                                    name={
+                                        <h2 className="text-left text-muted">
+                                            3. Computed Value in the Store
+                                        </h2>
+                                    }
+                                />
+                            </Route>
+                            <Route path="/example4">
+                                <Example4
+                                    name={
+                                        <h2 className="text-left text-muted">
+                                            4. Mobx Store + React State
+                                        </h2>
+                                    }
+                                />
+                            </Route>
+                            <Route path="/example5">
+                                <Example5
+                                    name={
+                                        <h2 className="text-left text-muted">
+                                            5. Mobx Store + ViewModel
+                                        </h2>
+                                    }
+                                />
+                            </Route>
+                            <Route path="/example6">
+                                <Example6
+                                    name={
+                                        <h2 className="text-left text-muted">
+                                            6. Array Elements Observability
+                                        </h2>
+                                    }
+                                />
+                            </Route>
+                            <Route path="/example7">
+                                <Example7
+                                    name={
+                                        <h2 className="text-left text-muted">
+                                            7. Object Properties Observability
+                                        </h2>
+                                    }
+                                />
+                            </Route>
+                            <Route path="/example8">
+                                <Example8
+                                    name={
+                                        <h2 className="text-left text-muted">
+                                            8. Array Object Elements Observability
+                                        </h2>
+                                    }
+                                />
+                            </Route>
+                            <Route path="/example9">
+                                <Example9
+                                    name={
+                                        <h2 className="text-left text-muted">
+                                            9. Nested Object Properties Observability
+                                        </h2>
+                                    }
+                                />
+                            </Route>
+                            <Route path="/example10">
+                                <Example10
+                                    name={
+                                        <h2 className="text-left text-muted">
+                                            10. Observability Loss
+                                        </h2>
+                                    }
+                                />
+                            </Route>
+                            <Route path="/example11">
+                                <Example11
+                                    name={<h2 className="text-left text-muted">11. MVVM Input</h2>}
+                                />
+                            </Route>
+                        </Switch>
+                    </Col>
+                </Row>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

@@ -30,15 +30,14 @@ class SpeedDisplayViewModel {
 const carViewModel = new CarViewModel();
 const speedDisplayViewModel = new SpeedDisplayViewModel(carViewModel.maxSpeed);
 
-export const Example10 = observer(() => {
+export const Example10 = observer(({ name }) => {
     return (
-        <>
-            <div>
-				<h3>BMW</h3>
-                <button onClick={carViewModel.changeMaxSpeed}>Change Speed</button>
-                <SpeedDisplay speedDisplayViewModel={speedDisplayViewModel} />
-            </div>
-        </>
+        <div>
+            {name}
+            <h3>BMW</h3>
+            <button onClick={carViewModel.changeMaxSpeed}>Change Speed</button>
+            <SpeedDisplay speedDisplayViewModel={speedDisplayViewModel} />
+        </div>
     );
 });
 

@@ -7,17 +7,18 @@ import { Col, Row } from "reactstrap";
 
 const store = new Store();
 
-export const Example2 = () => {
-	return (
-		<Provider store={store}>
-			<Row>
-				<Col>
-					<CounterHandlers />
-				</Col>
-				<Col>
-					<CounterResults />
-				</Col>
-			</Row>
-		</Provider>
-	);
+export const Example2 = ({ name }) => {
+    return (
+        <Provider store={store}>
+            {name}
+            <Row>
+                <Col>
+                    <CounterHandlers />
+                </Col>
+                <Col>
+                    <CounterResults />
+                </Col>
+            </Row>
+        </Provider>
+    );
 };
