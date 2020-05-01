@@ -7,7 +7,7 @@ import { Col, Row } from "reactstrap";
 const store = new Store();
 export const Context = React.createContext(store);
 
-export const Example3 = ({ name }) => {
+export const Example2 = ({ name }) => {
     return (
         <Context.Provider value={store}>
             {name}

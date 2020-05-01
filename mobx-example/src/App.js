@@ -28,30 +28,33 @@ function App() {
                                 <Link to="/example1">1. Basic App Structure</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example3">2. Files Structure, Computed Value</Link>
+                                <Link to="/example2">2. Basic App, MobX Provider</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example4">3. Mobx Store + React State</Link>
+                                <Link to="/example3">3. Files Structure</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example5">4. Mobx Store + ViewModel</Link>
+                                <Link to="/example4">4. Mobx Store + React State</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example6">5. Array Elements Observability</Link>
+                                <Link to="/example5">5. Mobx Store + ViewModel</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example7">6. Object Properties Observability</Link>
+                                <Link to="/example6">6. Array Elements Observability</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example8">7. Array Object Elements Observability</Link>
+                                <Link to="/example7">7. Object Properties Observability</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example8">8. Array Object Elements Observability</Link>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Link to="/example9">
-                                    8. Nested Object Properties Observability
+                                    9. Nested Object Properties Observability
                                 </Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example10">9. Observability Loss</Link>
+                                <Link to="/example10">10. Observability Loss</Link>
                             </ListGroupItem>
                         </ListGroup>
                     </Col>
@@ -69,16 +72,16 @@ function App() {
                             <Route path="/example2">
                                 <Example2
                                     name={
-                                        <h2 className="text-left text-muted">2. Files Structure</h2>
+                                        <h2 className="text-left text-muted">
+                                            2. Basic App, MobX Provider
+                                        </h2>
                                     }
                                 />
                             </Route>
                             <Route path="/example3">
                                 <Example3
                                     name={
-                                        <h2 className="text-left text-muted">
-                                            3. Computed Value in the Store
-                                        </h2>
+                                        <h2 className="text-left text-muted">3. Files Structure</h2>
                                     }
                                 />
                             </Route>
@@ -143,11 +146,6 @@ function App() {
                                             10. Observability Loss
                                         </h2>
                                     }
-                                />
-                            </Route>
-                            <Route path="/example11">
-                                <Example11
-                                    name={<h2 className="text-left text-muted">11. MVVM Input</h2>}
                                 />
                             </Route>
                         </Switch>

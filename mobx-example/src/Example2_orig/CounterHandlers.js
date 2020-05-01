@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { observer } from "mobx-react";
-import { Context } from "./Example3";
+import { Context } from "./Example2";
 
-export const CounterHandlers = observer((props) => {
+export const CounterHandlers = observer(() => {
     const store = useContext(Context);
 
     return (
