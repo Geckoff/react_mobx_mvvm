@@ -53,9 +53,6 @@ function App() {
                             <ListGroupItem>
                                 <Link to="/example10">9. Observability Loss</Link>
                             </ListGroupItem>
-                            <ListGroupItem>
-                                <Link to="/example11">10. MVVM Input</Link>
-                            </ListGroupItem>
                         </ListGroup>
                     </Col>
                     <Col sm={9}>
