@@ -28,36 +28,33 @@ function App() {
                                 <Link to="/example1">1. Basic App Structure</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example2">2. Files Structure</Link>
+                                <Link to="/example3">2. Files Structure, Computed Value</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example3">3. Computed Value in the Store</Link>
+                                <Link to="/example4">3. Mobx Store + React State</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example4">4. Mobx Store + React State</Link>
+                                <Link to="/example5">4. Mobx Store + ViewModel</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example5">5. Mobx Store + ViewModel</Link>
+                                <Link to="/example6">5. Array Elements Observability</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example6">6. Array Elements Observability</Link>
+                                <Link to="/example7">6. Object Properties Observability</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example7">7. Object Properties Observability</Link>
-                            </ListGroupItem>
-                            <ListGroupItem>
-                                <Link to="/example8">8. Array Object Elements Observability</Link>
+                                <Link to="/example8">7. Array Object Elements Observability</Link>
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Link to="/example9">
-                                    9. Nested Object Properties Observability
+                                    8. Nested Object Properties Observability
                                 </Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example10">10. Observability Loss</Link>
+                                <Link to="/example10">9. Observability Loss</Link>
                             </ListGroupItem>
                             <ListGroupItem>
-                                <Link to="/example11">11. MVVM Input</Link>
+                                <Link to="/example11">10. MVVM Input</Link>
                             </ListGroupItem>
                         </ListGroup>
                     </Col>
