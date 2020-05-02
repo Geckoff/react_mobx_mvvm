@@ -8,7 +8,6 @@ class ExampleViewModel {
 
     @action changeAudiName = () => {
         this.cars[1] = this.cars[1] + "1";
-        console.log(this.cars);
     };
 }
 
@@ -19,7 +18,7 @@ export const Example6 = observer(({ name }) => {
         <div>
             {name}
             <button onClick={exampleViewModel.changeAudiName}>Change Name</button>
-            {exampleViewModel.cars.map(carName => (
+            {exampleViewModel.cars.map((carName) => (
                 <div key={carName}>{carName}</div>
             ))}
         </div>

@@ -7,12 +7,11 @@ class ExampleViewModel {
     @observable car = {
         name: "BMW",
         maxSpeed: 200,
-        type: "hatchback"
+        type: "hatchback",
     };
 
     @action changeCarSpeed = () => {
         this.car.maxSpeed = this.car.maxSpeed + 1;
-        console.log(this.car);
     };
 }
 

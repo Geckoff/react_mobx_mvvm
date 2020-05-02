@@ -1,7 +1,8 @@
-import React from "react";
-import { inject, observer } from "mobx-react";
+import React, { useContext } from "react";
+import { observer } from "mobx-react";
 import { observable, action } from "mobx";
 import { useInstance } from "../hooks/useInstance";
+import { Context } from "./Example5";
 
 class CounterHandlersViewModel {
     @observable valueOneSteps = [];
@@ -25,31 +26,30 @@ class CounterHandlersViewModel {
     };
 }
 
-export const CounterHandlers = inject("store")(
-    observer(props => {
-        const {
-            valueOneSteps,
-            valueTwoSteps,
-            sumSteps,
-            changeValOneHandler,
-            changeValTwoHandler
-        } = useInstance(new CounterHandlersViewModel(props.store));
+export const CounterHandlers = observer(() => {
+    const store = useContext(Context);
+    const {
+        valueOneSteps,
+        valueTwoSteps,
+        sumSteps,
+        changeValOneHandler,
+        changeValTwoHandler,
+    } = useInstance(new CounterHandlersViewModel(store));
 
-        return (
+    return (
+        <div>
+            <h3>Handlers</h3>
             <div>
-                <h3>Handlers</h3>
-                <div>
-                    <button onClick={changeValOneHandler}>Change Value 1</button>
-                </div>
-                <div>
-                    <button onClick={changeValTwoHandler}>Change Value 2</button>
-                </div>
-                <div className="mt-4">
-                    <div>Value 1 Steps: {valueOneSteps.join(", ")}</div>
-                    <div>Value 2 Steps: {valueTwoSteps.join(", ")}</div>
-                    <div>Sum Steps: {sumSteps.join(", ")}</div>
-                </div>
+                <button onClick={changeValOneHandler}>Change Value 1</button>
             </div>
-        );
-    })
-);
+            <div>
+                <button onClick={changeValTwoHandler}>Change Value 2</button>
+            </div>
+            <div className="mt-4">
+                <div>Value 1 Steps: {valueOneSteps.join(", ")}</div>
+                <div>Value 2 Steps: {valueTwoSteps.join(", ")}</div>
+                <div>Sum Steps: {sumSteps.join(", ")}</div>
+            </div>
+        </div>
+    );
+});

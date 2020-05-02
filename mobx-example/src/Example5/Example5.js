@@ -1,15 +1,15 @@
 import React from "react";
 import { Store } from "./Srore";
-import { Provider } from "mobx-react";
 import { CounterHandlers } from "./CounterHandlers";
 import { CounterResults } from "./CounterResults";
 import { Col, Row } from "reactstrap";
 
 const store = new Store();
+export const Context = React.createContext(store);
 
 export const Example5 = ({ name }) => {
     return (
-        <Provider store={store}>
+        <Context.Provider value={store}>
             {name}
             <Row>
                 <Col>
@@ -19,6 +19,6 @@ export const Example5 = ({ name }) => {
                     <CounterResults />
                 </Col>
             </Row>
-        </Provider>
+        </Context.Provider>
     );
 };
