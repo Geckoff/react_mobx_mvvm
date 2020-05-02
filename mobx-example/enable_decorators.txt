@@ -6,7 +6,7 @@
 }
 The above removes errors from vs code.
 
-2. Install craco
+2. Install craco - Create React App Config Override
 npm install @craco/craco
 
 3. npm install --save-dev @babel/plugin-proposal-decorators

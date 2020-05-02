@@ -13,46 +13,46 @@ export const ProductionLine = inject("carsStore")(
 		const [bodyAssembly, setBodyAssembly] = useState([]);
 		const [painting, setPainting] = useState([]);
 
-		const moveToProduction = carsBatch => {
+		const moveToProduction = (carsBatch) => {
 			NotificationManager.info("Moved to Production");
 			putCarsIntoProduction(carsBatch);
 			setChassisAssembly([...chassisAssembly, carsBatch]);
 		};
 
-		const moveToBodyAssembly = carsBatch => {
+		const moveToBodyAssembly = (carsBatch) => {
 			NotificationManager.info("Moved to Body Assembly");
-			setChassisAssembly(chassisAssembly =>
+			setChassisAssembly((chassisAssembly) =>
 				chassisAssembly.filter(
-					chassisAssemblyCarsBatch => chassisAssemblyCarsBatch !== carsBatch
+					(chassisAssemblyCarsBatch) => chassisAssemblyCarsBatch !== carsBatch
 				)
 			);
 			setBodyAssembly([...bodyAssembly, carsBatch]);
 		};
 
-		const moveToPainting = carsBatch => {
+		const moveToPainting = (carsBatch) => {
 			NotificationManager.info("Moved to Painting");
-			setBodyAssembly(bodyAssembly =>
-				bodyAssembly.filter(bodyAssemblyCarsBatch => bodyAssemblyCarsBatch !== carsBatch)
+			setBodyAssembly((bodyAssembly) =>
+				bodyAssembly.filter((bodyAssemblyCarsBatch) => bodyAssemblyCarsBatch !== carsBatch)
 			);
 			setPainting([...painting, carsBatch]);
 		};
 
-		const sellCarsBatch = carsBatch => {
+		const sellCarsBatch = (carsBatch) => {
 			NotificationManager.success("Sold!");
-			setPainting(painting =>
-				painting.filter(paintingCarsBatch => paintingCarsBatch !== carsBatch)
+			setPainting((painting) =>
+				painting.filter((paintingCarsBatch) => paintingCarsBatch !== carsBatch)
 			);
 			sellCars(carsBatch);
 		};
 
-		const getStepColor = carBatches => {
+		const getStepColor = (carBatches) => {
 			const {
 				empty,
 				superLight,
 				light,
 				medium,
 				heavy,
-				superHeavy
+				superHeavy,
 			} = productionLineLoadingColors;
 			switch (true) {
 				case carBatches.length === 0:
@@ -83,7 +83,7 @@ export const ProductionLine = inject("carsStore")(
 					<h4 style={{ color: ordersStepColor }}>
 						<u>ORDERS</u>
 					</h4>
-					{carsBatchesOrders.map(carsBatch => (
+					{carsBatchesOrders.map((carsBatch) => (
 						<CarsBatchCard
 							key={carsBatch.id}
 							carsBatch={carsBatch}
@@ -94,7 +94,7 @@ export const ProductionLine = inject("carsStore")(
 				</Col>
 				<Col>
 					<h4 style={{ color: chassisAssemblyStepColor }}>1. Chassis Assembly</h4>
-					{chassisAssembly.map(carsBatch => (
+					{chassisAssembly.map((carsBatch) => (
 						<CarsBatchCard
 							key={carsBatch.id}
 							carsBatch={carsBatch}
@@ -105,7 +105,7 @@ export const ProductionLine = inject("carsStore")(
 				</Col>
 				<Col>
 					<h4 style={{ color: bodyAssemblyStepColor }}>2. Body Assembly</h4>
-					{bodyAssembly.map(carsBatch => (
+					{bodyAssembly.map((carsBatch) => (
 						<CarsBatchCard
 							key={carsBatch.id}
 							carsBatch={carsBatch}
@@ -116,7 +116,7 @@ export const ProductionLine = inject("carsStore")(
 				</Col>
 				<Col>
 					<h4 style={{ color: paintingStepColor }}>3. Painting</h4>
-					{painting.map(carsBatch => (
+					{painting.map((carsBatch) => (
 						<CarsBatchCard
 							key={carsBatch.id}
 							carsBatch={carsBatch}
