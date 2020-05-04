@@ -53,9 +53,9 @@ function App() {
                                     9. Nested Object Properties Observability
                                 </Link>
                             </ListGroupItem>
-                            <ListGroupItem>
+                            {/*<ListGroupItem>
                                 <Link to="/example10">10. Observability Loss</Link>
-                            </ListGroupItem>
+                            </ListGroupItem>*/}
                         </ListGroup>
                     </Col>
                     <Col sm={9}>

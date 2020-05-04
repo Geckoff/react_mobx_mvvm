@@ -7,8 +7,8 @@ export class AccountingAllViewModel {
 		this.carsStore = carsStore;
 	}
 
-	filterOutEmodel = carsBatch => carsBatch.name !== "Model E";
-	applyDifferential = batchPrice => Math.round(batchPrice * 1);
+	filterOutEmodel = (carsBatch) => carsBatch.name !== "Model E";
+	applyDifferential = (batchPrice) => Math.round(batchPrice * 0.7);
 
 	@computed get quantityInOrders() {
 		return this.carsStore.carsBatchesOrders
@@ -60,7 +60,7 @@ export class AccountingAllViewModel {
 
 	clearSalesData = () => {
 		const emodelCarsBatchesSold = this.carsStore.carsBatchesSold.filter(
-			carsBatch => carsBatch.name === "Model E"
+			(carsBatch) => carsBatch.name === "Model E"
 		);
 		this.carsStore.updatedSoldCars(emodelCarsBatchesSold);
 	};
