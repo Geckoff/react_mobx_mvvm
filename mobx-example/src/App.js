@@ -16,6 +16,9 @@ import { Example8 } from "./Example8/Example8";
 import { Example9 } from "./Example9/Example9";
 import { Example10 } from "./Example10/Example10";
 import { Example11 } from "./Example11/Example11";
+import { Example12 } from "./Example12/Example12";
+import { Example13 } from "./Example13/Example13";
+import { Example14 } from "./Example14/Example14";
 
 function App() {
     return (
@@ -58,6 +61,15 @@ function App() {
                             </ListGroupItem>
                             <ListGroupItem>
                                 <Link to="/example11">11. MVVM Input</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example12">12. React Render Class Components</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example13">13. React-MobX Render Class Components</Link>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                <Link to="/example14">14. React-MobX Render Function Components</Link>
                             </ListGroupItem>
                         </ListGroup>
                     </Col>
@@ -154,6 +166,21 @@ function App() {
                             <Route path="/example11">
                                 <Example11
                                     name={<h2 className="text-left text-muted">11. MVVM Input</h2>}
+                                />
+                            </Route>
+                            <Route path="/example12">
+                                <Example12
+                                    name={<h2 className="text-left text-muted">12. React Render Class Components</h2>}
+                                />
+                            </Route>
+                            <Route path="/example13">
+                                <Example13
+                                    name={<h2 className="text-left text-muted">13. React-MobX Render Class Components</h2>}
+                                />
+                            </Route>
+                            <Route path="/example14">
+                                <Example14
+                                    name={<h2 className="text-left text-muted">14. React-MobX Render Class Components</h2>}
                                 />
                             </Route>
                         </Switch>
